@@ -1,0 +1,5 @@
+ami_id        = "ami-01a00762f46d584a1"
+subnet_id     = "subnet-08e972f8f289d307c"
+instance_type = "m7i-flex.large"
+tags          = "uat-env-workspace"
+sg_tag = "uat-env-sg"
