@@ -14,7 +14,7 @@ crash.log
 crash.*.log
 
 # Exclude all .tfvars files (usually contain environment-specific secrets/passwords)
-*.tfvars
+
 *.tfvars.json
 
 # Ignore override files (used for quick local modifications)
@@ -39,3 +39,6 @@ C:\aws_terraform\Day-04\local-provisioner\.terraform.lock.hcl
 C:\aws_terraform\Day-04\local-provisioner\custom-key.pem
 C:\aws_terraform\Day-04\local-provisioner\custom-key.pub
 C:\aws_terraform\Day-02\.terraform.lock.hcl
+
+C:\aws_terraform\workspace\.terraform.lock.hcl
+C:\aws_terraform\workspace\.terraform
