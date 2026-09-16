@@ -42,3 +42,7 @@ C:\aws_terraform\Day-02\.terraform.lock.hcl
 
 C:\aws_terraform\workspace\.terraform.lock.hcl
 C:\aws_terraform\workspace\.terraform
+
+C:\aws_terraform\environments\Storage\S3\dev\.terraform
+C:\aws_terraform\environments\Storage\S3\dev\.terraform.lock.hcl
+environments/Storage/S3/dev/.terraform.lock.hcl
