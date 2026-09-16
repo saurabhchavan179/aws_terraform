@@ -1,0 +1,13 @@
+vpc_name = "tf_vpc"
+vpc_cidr = "10.0.0.0/16"
+Environment = "dev"
+enable_dns_hostnames = true
+enable_dns_support = true
+public_subnet_01_cidr = "10.0.1.0/24"
+public_subnet_01_name = "tf_public_subnet_01"
+private_subnet_01_cidr = "10.0.2.0/24"
+private_subnet_01_name = "tf_private_subnet_01"
+private_subnet_02_cidr = "10.0.3.0/24"
+private_subnet_02_name = "tf_private_subnet_02" 
+igw_name = "my_igw"
+public_rt_name = "public_rt_tf"
