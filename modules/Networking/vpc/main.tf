@@ -14,7 +14,8 @@ resource "aws_vpc" "main" {
 
 resource "aws_subnet" "public_subnet_01" {
   vpc_id            = aws_vpc.main.id
-  cidr_block        = var.public_subnet_01_cidr
+  cidr_block        = var.public_subnet_cidr_01
+  availability_zone = var.subnet_availability_zone_01
   map_public_ip_on_launch = true
 
   tags = {
@@ -22,12 +23,36 @@ resource "aws_subnet" "public_subnet_01" {
   }
 }
 
+resource "aws_subnet" "public_subnet_02" {
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = var.public_subnet_cidr_02
+  availability_zone = var.subnet_availability_zone_02
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = var.public_subnet_02_name
+  }
+}
+
+resource "aws_subnet" "public_subnet_03" {
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = var.public_subnet_cidr_03
+  availability_zone = var.subnet_availability_zone_03
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = var.public_subnet_03_name
+  }
+}
+
+
 
 
 
 resource "aws_subnet" "private_subnet_01" {
   vpc_id            = aws_vpc.main.id
-  cidr_block        = var.private_subnet_01_cidr
+  cidr_block        = var.private_subnet_cidr_01
+  availability_zone = var.subnet_availability_zone_01
 
   tags = {
     Name = var.private_subnet_01_name
@@ -36,12 +61,25 @@ resource "aws_subnet" "private_subnet_01" {
 
 resource "aws_subnet" "private_subnet_02" {
   vpc_id            = aws_vpc.main.id
-  cidr_block        = var.private_subnet_02_cidr
+  cidr_block        = var.private_subnet_cidr_02
+  availability_zone = var.subnet_availability_zone_02
 
   tags = {
     Name = var.private_subnet_02_name
   }
 }
+
+resource "aws_subnet" "private_subnet_03" {
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = var.private_subnet_cidr_03
+  availability_zone = var.subnet_availability_zone_03
+
+
+  tags = {
+    Name = var.private_subnet_03_name
+  }
+}
+
 
 resource "aws_internet_gateway" "my-igw" {
   vpc_id = aws_vpc.main.id
@@ -66,7 +104,13 @@ resource "aws_route_table" "my-rt" {
 }
 
 resource "aws_route_table_association" "public_rt_assoc" {
-  subnet_id      = aws_subnet.public_subnet_01.id
+ for_each = {
+    public_subnet_01 = aws_subnet.public_subnet_01.id
+    public_subnet_02 = aws_subnet.public_subnet_02.id
+    public_subnet_03 = aws_subnet.public_subnet_03.id
+  }
+
+  subnet_id      = each.value
   route_table_id = aws_route_table.my-rt.id
 }
 
@@ -103,6 +147,12 @@ resource "aws_route_table" "private_rt" {
 
 
 resource "aws_route_table_association" "private_rt_assoc" {
-  subnet_id      = aws_subnet.private_subnet_01.id
+  for_each = {
+    private_subnet_01 = aws_subnet.private_subnet_01.id
+    private_subnet_02 = aws_subnet.private_subnet_02.id
+    private_subnet_03 = aws_subnet.private_subnet_03.id
+  }
+
+  subnet_id      = each.value
   route_table_id = aws_route_table.private_rt.id
 }

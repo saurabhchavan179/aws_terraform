@@ -19,7 +19,7 @@ variable "enable_dns_support" {
     type = bool  
 }
 
-variable "public_subnet_01_cidr" {
+variable "public_subnet_cidr_01" {
     type        = string
 }
 
@@ -27,7 +27,7 @@ variable "public_subnet_01_name" {
     type        = string
 }
 
-variable "private_subnet_01_cidr" {
+variable "private_subnet_cidr_01" {
     type        = string
 }
 
@@ -35,7 +35,7 @@ variable "private_subnet_01_name" {
     type        = string
 }
 
-variable "private_subnet_02_cidr" {
+variable "private_subnet_cidr_02" {
     type        = string
 }
 
@@ -52,5 +52,42 @@ variable "public_rt_name" {
 }
 
 variable "private_rt_name" {
+    type        = string
+}
+
+variable "subnet_availability_zone_01" {
+    type        = string
+}
+
+
+variable "public_subnet_cidr_02" {
+    type        = string
+}
+
+variable "subnet_availability_zone_02" {
+    type        = string
+}
+
+variable "public_subnet_02_name" {
+    type        = string
+}
+
+variable "public_subnet_cidr_03" {
+    type        = string
+}
+
+variable "subnet_availability_zone_03" {
+    type        = string
+}
+
+variable "public_subnet_03_name" {
+    type        = string
+}
+
+variable "private_subnet_cidr_03" {
+    type        = string
+}
+
+variable "private_subnet_03_name" {
     type        = string
 }
