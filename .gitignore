@@ -54,3 +54,12 @@ environments/Networking/vpc/dev/.terraform.lock.hcl
 C:\aws_terraform\environments\Compute\EC2\dev\.terraform
 C:\aws_terraform\environments\Compute\EC2\dev\.terraform.lock.hcl
 environments/Compute/EC2/dev/.terraform.lock.hcl
+
+C:\aws_terraform\environments\Networking\vpc\qa\.terraform
+C:\aws_terraform\environments\Networking\vpc\qa\.terraform.lock.hcl
+environments/Networking/vpc/qa/.terraform.lock.hcl
+
+C:\aws_terraform\environments\Networking\vpc\uat\.terraform
+C:\aws_terraform\environments\Networking\vpc\uat\.terraform.lock.hcl
+environments/Networking/vpc/uat/.terraform.lock.hcl
+environments/Networking/vpc/prod/.terraform.lock.hcl
